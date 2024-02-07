@@ -1,7 +1,7 @@
 WITH month_group AS(
 SELECT
 *,
-CONCAT(EXTRACT(YEAR FROM date_date), "-", EXTRACT(MONTH FROM date_date),"-", "01") AS date_month
+CAST(CONCAT(EXTRACT(YEAR FROM date_date), "-", EXTRACT(MONTH FROM date_date),"-", "01") AS date) AS date_month
 FROM{{ ref('finance_campaigns_day') }}
 )
 SELECT
