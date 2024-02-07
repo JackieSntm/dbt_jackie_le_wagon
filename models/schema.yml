@@ -51,5 +51,18 @@ sources:
       - name: facebook
         identifier: raw_gz_facebook
         description: facebook table 
+
+models:
+      - name: int_campaigns
+        description: aggregated table from paid sources 
+        tests: 
+          - unique:
+              column_name: "(date_date||'_'||paid_source||'_'||campaign_key)"
+          - not_null:
+              column_name: "(date_date||'_'||paid_source||'_'||campaign_key)"
+              
+    
+          
+
         
               
